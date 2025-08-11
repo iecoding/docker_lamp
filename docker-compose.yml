@@ -1,0 +1,45 @@
+services:
+  apache:
+    image: php:8.2-apache
+    container_name: apache-webserver
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    volumes:
+      - ./app:/var/www/html
+      - ./docker/apache/apache.conf:/etc/apache2/sites-enabled/000-default.conf
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - db
+    environment:
+      XDEBUG_MODE: debug
+      XDEBUG_CONFIG: client_host=host.docker.internal client_port=9003
+    extra_hosts:
+      host.docker.internal: host-gateway
+
+  db:
+    image: mysql:8.0
+    container_name: mysql-webserver
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: webserver_database
+      MYSQL_USER: webserver_user
+      MYSQL_PASSWORD: webserver_password
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-webserver
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
