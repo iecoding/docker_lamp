@@ -1,0 +1,92 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+*.sublime-*
+.atom/
+.brackets.json
+.project
+.buildpath
+.settings/
+nbproject/
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.cache
+*.bak
+*.backup
+*.old
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# PHP
+vendor/
+composer.phar
+composer.lock
+.phpunit.result.cache
+
+# Database
+*.sql
+*.sqlite
+*.db
+
+# Logs
+*.log
+logs/
+error_log
+access_log
+
+# Version Control
+.svn/
+.hg/
+.bzr/
+CVS/
+
+# Build and Distribution
+dist/
+build/
+*.min.js
+*.min.css
+
+# Package Managers
+package-lock.json
+yarn.lock
+Pipfile.lock
+
+# Test Coverage
+coverage/
+.nyc_output/
+.coverage
+htmlcov/
+
+# OS generated files
+.directory
+.gvfs
+.fuse_hidden*
+.nfs*
