@@ -90,3 +90,6 @@ htmlcov/
 .gvfs
 .fuse_hidden*
 .nfs*
+
+# App folder content will be ignored, remove if necessary
+app/
